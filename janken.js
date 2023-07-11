@@ -52,6 +52,26 @@ function game() {
         computerScore++;
     }
 }
+
+document.getElementById("rock").addEventListener("click", function() {
+    let activeround = playRound("rock", getComputerChoice());
+    console.log(playerScore)
+    console.log(computerScore)
+    console.log(activeround)
+});
+document.getElementById("paper").addEventListener("click", function() {
+    let activeround = playRound("paper", getComputerChoice());
+    console.log(playerScore)
+    console.log(computerScore)
+    console.log(activeround)
+});
+document.getElementById("scissors").addEventListener("click", function() {
+    let activeround = playRound("scissors", getComputerChoice());
+    console.log(playerScore)
+    console.log(computerScore)
+    console.log(activeround)
+});
+
 console.log(playerScore)
 console.log(computerScore)
 console.log(ties)
