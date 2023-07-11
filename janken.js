@@ -54,22 +54,52 @@ function game() {
 }
 
 document.getElementById("rock").addEventListener("click", function() {
-    let activeround = playRound("rock", getComputerChoice());
-    console.log(playerScore)
-    console.log(computerScore)
-    console.log(activeround)
+    let round = playRound("rock", getComputerChoice());
+    // updates score by string matching
+    if (round.includes("You have won!")) {
+        playerScore++;
+    }
+    else if (round.includes("It's a tie!")) {
+        ties++
+    }
+    else {
+        computerScore++;
+    }
+    document.getElementById("score-user").innerText = playerScore;
+    document.getElementById("score-com").innerText = computerScore;
+    document.getElementById("result").innerText = round;       
 });
 document.getElementById("paper").addEventListener("click", function() {
-    let activeround = playRound("paper", getComputerChoice());
-    console.log(playerScore)
-    console.log(computerScore)
-    console.log(activeround)
+    let round = playRound("paper", getComputerChoice());
+    // updates score by string matching
+    if (round.includes("You have won!")) {
+        playerScore++;
+    }
+    else if (round.includes("It's a tie!")) {
+        ties++
+    }
+    else {
+        computerScore++;
+    }
+    document.getElementById("score-user").innerText = playerScore;
+    document.getElementById("score-com").innerText = computerScore;
+    document.getElementById("result").innerText = round;          
 });
 document.getElementById("scissors").addEventListener("click", function() {
-    let activeround = playRound("scissors", getComputerChoice());
-    console.log(playerScore)
-    console.log(computerScore)
-    console.log(activeround)
+    let round = playRound("scissors", getComputerChoice());
+    // updates score by string matching
+    if (round.includes("You have won!")) {
+        playerScore++;
+    }
+    else if (round.includes("It's a tie!")) {
+        ties++
+    }
+    else {
+        computerScore++;
+    }
+    document.getElementById("score-user").innerText = playerScore;
+    document.getElementById("score-com").innerText = computerScore;
+    document.getElementById("result").innerText = round;      
 });
 
 console.log(playerScore)
