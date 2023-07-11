@@ -1,33 +1,21 @@
 const OPTIONS = Array("rock","paper","scissors");
-
+// defines necessary functions
 function getComputerChoice() {
     return OPTIONS[Math.floor(Math.random() * OPTIONS.length)]
 }
-
-function getPlayerSelection() {
-    return window.prompt("What will you choose? Rock, Paper or Scissors?").toLowerCase()
-}
-
 function playRound(playerSelection, computerSelection) {
-    // checks for correct input
-    if (OPTIONS.includes(playerSelection)) {
-        if (computerSelection === playerSelection) {
-            return "It's a tie!";
-        }
-        else {
-            switch  (playerSelection) {
-            case "rock":
-                return (computerSelection === "scissors" ?  "You have won! Rock beats Scissors." : "You have lost, Paper beats Rock.");
-            case "paper":
-                return (computerSelection === "rock" ? "You have won! Paper beats Rock." : "You have lost, Scissors beat Paper.");
-            case "scissors":
-                return (computerSelection === "paper" ? "You have won! Scissors beat Paper." : "You have lost, Rock beats Scissors.");
-            }
-        }
+    if (computerSelection === playerSelection) {
+        return "It's a tie!";
     }
     else {
-        console.log("Invalid Choice!");
-        return;
+        switch  (playerSelection) {
+        case "rock":
+            return (computerSelection === "scissors" ?  "You have won! Rock beats Scissors." : "You have lost, Paper beats Rock.");
+        case "paper":
+            return (computerSelection === "rock" ? "You have won! Paper beats Rock." : "You have lost, Scissors beat Paper.");
+        case "scissors":
+            return (computerSelection === "paper" ? "You have won! Scissors beat Paper." : "You have lost, Rock beats Scissors.");
+        }
     }
 }
 // initializes variables
@@ -54,6 +42,7 @@ function playGameTo5() {
                 else {
                     computerScore++;
                 }   
+                // inserts HTML content
                 playerScoreHTML.innerText = playerScore;
                 computerScoreHTML.innerText = computerScore;
                 resultHTML.innerText = round;
