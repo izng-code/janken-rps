@@ -53,6 +53,10 @@ function game() {
     }
 }
 
+let playerScoreHTML = document.getElementById("score-user");
+let computerScoreHTML = document.getElementById("score-com");
+let resultHTML = document.getElementById("result");
+
 document.getElementById("rock").addEventListener("click", function() {
     let round = playRound("rock", getComputerChoice());
     // updates score by string matching
@@ -64,10 +68,20 @@ document.getElementById("rock").addEventListener("click", function() {
     }
     else {
         computerScore++;
+    }   
+    playerScoreHTML.innerText = playerScore;
+    computerScoreHTML.innerText = computerScore;
+    resultHTML.innerText = round;
+    if (playerScoreHTML.innerText === "5") {
+        let div = document.createElement("div");
+        div.innerText = "The game is over! You have won!";
+        document.querySelector("body").appendChild(div)
     }
-    document.getElementById("score-user").innerText = playerScore;
-    document.getElementById("score-com").innerText = computerScore;
-    document.getElementById("result").innerText = round;       
+    else if (computerScoreHTML.innerText === "5") {
+        let div = document.createElement("div");
+        div.innerText = "The game is over! The computer has won!"
+        document.querySelector("body").appendChild(div)
+    }      
 });
 document.getElementById("paper").addEventListener("click", function() {
     let round = playRound("paper", getComputerChoice());
@@ -81,9 +95,19 @@ document.getElementById("paper").addEventListener("click", function() {
     else {
         computerScore++;
     }
-    document.getElementById("score-user").innerText = playerScore;
-    document.getElementById("score-com").innerText = computerScore;
-    document.getElementById("result").innerText = round;          
+    playerScoreHTML.innerText = playerScore;
+    computerScoreHTML.innerText = computerScore;
+    resultHTML.innerText = round;
+    if (playerScoreHTML.innerText === "5") {
+        let div = document.createElement("div");
+        div.innerText = "The game is over! You have won!";
+        document.querySelector("body").appendChild(div)
+    }
+    else if (computerScoreHTML.innerText === "5") {
+        let div = document.createElement("div");
+        div.innerText = "The game is over! The computer has won!"
+        document.querySelector("body").appendChild(div)
+    }      
 });
 document.getElementById("scissors").addEventListener("click", function() {
     let round = playRound("scissors", getComputerChoice());
@@ -97,9 +121,19 @@ document.getElementById("scissors").addEventListener("click", function() {
     else {
         computerScore++;
     }
-    document.getElementById("score-user").innerText = playerScore;
-    document.getElementById("score-com").innerText = computerScore;
-    document.getElementById("result").innerText = round;      
+    playerScoreHTML.innerText = playerScore;
+    computerScoreHTML.innerText = computerScore;
+    resultHTML.innerText = round;
+    if (playerScoreHTML.innerText === "5") {
+        let div = document.createElement("div");
+        div.innerText = "The game is over! You have won!";
+        document.querySelector("body").appendChild(div)
+    }
+    else if (computerScoreHTML.innerText === "5") {
+        let div = document.createElement("div");
+        div.innerText = "The game is over! The computer has won!"
+        document.querySelector("body").appendChild(div)
+    }      
 });
 
 console.log(playerScore)
