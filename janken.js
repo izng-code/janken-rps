@@ -52,9 +52,6 @@ function game() {
         computerScore++;
     }
 }
-for (let i = 0; i < 5; i++) {
-    game();
-}
 console.log(playerScore)
 console.log(computerScore)
 console.log(ties)
